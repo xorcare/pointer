@@ -1,0 +1,29 @@
+language: go
+
+sudo: false
+
+matrix:
+  include:
+  - go: 1.5.x
+  - go: 1.6.x
+  - go: 1.7.x
+  - go: 1.8.x
+  - go: 1.9.x
+  - go: 1.10.x
+  - go: 1.11.x
+  - go: 1.12.x
+  - go: 1.x
+    env: GO111MODULE=on
+  - go: tip
+
+script:
+- >
+  if [ "${TRAVIS_GO_VERSION}" = "1.x" ];
+  then make ci;
+  else go test ./... -count=1 -race;
+  fi;
+- make build
+- go get github.com/xorcare/pointer
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
