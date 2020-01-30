@@ -1,4 +1,4 @@
-// Copyright © 2019, Vasiliy Vasilyuk. All rights reserved.
+// Copyright © 2019-2020 Vasiliy Vasilyuk. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"reflect"
 	"testing"
+	"time"
 )
 
 func equal(t testing.TB, expected, actual interface{}) {
@@ -158,4 +159,9 @@ func TestUint64(t *testing.T) {
 func TestUintptr(t *testing.T) {
 	equal(t, uintptr(0), *Uintptr(uintptr(0)))
 	equal(t, uintptr(1), *Uintptr(uintptr(1)))
+}
+
+func TestTime(t *testing.T) {
+	equal(t, time.Time{}, *Time(time.Time{}))
+	equal(t, time.Time{}.Add(time.Hour), *Time(time.Time{}.Add(time.Hour)))
 }

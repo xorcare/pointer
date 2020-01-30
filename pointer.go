@@ -1,10 +1,13 @@
-// Copyright © 2019, Vasiliy Vasilyuk. All rights reserved.
+// Copyright © 2019-2020 Vasiliy Vasilyuk. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 package pointer
 
-import "reflect"
+import (
+	"reflect"
+	"time"
+)
 
 // Any is a helper routine that allocates a new interface value
 // to store v and returns a pointer to it.
@@ -111,3 +114,7 @@ func Uint64(v uint64) *uint64 { return &v }
 // Uintptr is a helper routine that allocates a new uintptr value
 // to store v and returns a pointer to it.
 func Uintptr(v uintptr) *uintptr { return &v }
+
+// Time is a helper routine that allocates a new time.Time value
+// to store v and returns a pointer to it.
+func Time(v time.Time) *time.Time { return &v }

@@ -41,11 +41,11 @@ and in the [source library code](https://git.io/Jeg75).
 | How to set **uint16** pointer in a struct literal or variable? | `var _ *uint16 = pointer.Uint16(16)` |
 | How to set **uint32** pointer in a struct literal or variable? | `var _ *uint32 = pointer.Uint32(32)` |
 | How to set **uint64** pointer in a struct literal or variable? | `var _ *uint64 = pointer.Uint64(64)` |
-| How to set **uintptr** pointer in a struct literal or variable? | `var _ *uintptr = pointer.Uintptr(64)` |
+| How to set **time.Time** pointer in a struct literal or variable? | `var _ *time.Time = pointer.Time(time.Now())` |
 
 ## License
 
-© Vasiliy Vasilyuk, 2019
+© Vasiliy Vasilyuk, 2019-2020
 
 Released under the [BSD 3-Clause License][LICENSE].
 
