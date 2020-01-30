@@ -379,3 +379,19 @@ func ExampleTime() {
 	// The value set by the library: *time.Time 0001-01-01 00:01:00 +0000 UTC
 	// The value set in elegant way: *time.Time 0001-01-01 01:00:00 +0000 UTC
 }
+
+func ExampleDuration() {
+	s := struct{ Pointer *time.Duration }{}
+	fmt.Println(fmt.Sprintf("Zero pointer value: %T %v", s.Pointer, s.Pointer))
+
+	s.Pointer = pointer.Duration(time.Hour)
+	fmt.Println(fmt.Sprintf("The value set by the library: %T %v", s.Pointer, *s.Pointer))
+
+	s.Pointer = &[]time.Duration{time.Minute}[0]
+	fmt.Println(fmt.Sprintf("The value set in elegant way: %T %v", s.Pointer, *s.Pointer))
+
+	// Output:
+	// Zero pointer value: *time.Duration <nil>
+	// The value set by the library: *time.Duration 1h0m0s
+	// The value set in elegant way: *time.Duration 1m0s
+}

@@ -42,6 +42,7 @@ and in the [source library code](https://git.io/Jeg75).
 | How to set **uint32** pointer in a struct literal or variable? | `var _ *uint32 = pointer.Uint32(32)` |
 | How to set **uint64** pointer in a struct literal or variable? | `var _ *uint64 = pointer.Uint64(64)` |
 | How to set **time.Time** pointer in a struct literal or variable? | `var _ *time.Time = pointer.Time(time.Now())` |
+| How to set **time.Duration** pointer in a struct literal or variable? | `var _ *time.Duration = pointer.Duration(time.Hour)` |
 
 ## License
 

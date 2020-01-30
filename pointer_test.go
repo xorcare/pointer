@@ -165,3 +165,9 @@ func TestTime(t *testing.T) {
 	equal(t, time.Time{}, *Time(time.Time{}))
 	equal(t, time.Time{}.Add(time.Hour), *Time(time.Time{}.Add(time.Hour)))
 }
+
+func TestDuration(t *testing.T) {
+	equal(t, -1*time.Hour, *Duration(-1 * time.Hour))
+	equal(t, time.Duration(0), *Duration(time.Duration(0)))
+	equal(t, 127*time.Hour, *Duration(127 * time.Hour))
+}
