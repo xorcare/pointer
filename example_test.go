@@ -1,4 +1,4 @@
-// Copyright © 2019, Vasiliy Vasilyuk. All rights reserved.
+// Copyright © 2019-2020 Vasiliy Vasilyuk. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/xorcare/pointer"
 )
@@ -361,4 +362,20 @@ func ExampleUintptr() {
 	// Zero pointer value: *uintptr <nil>
 	// The value set by the library: *uintptr 4611686018427387903
 	// The value set in elegant way: *uintptr 9223372036854775807
+}
+
+func ExampleTime() {
+	s := struct{ Pointer *time.Time }{}
+	fmt.Println(fmt.Sprintf("Zero pointer value: %T %v", s.Pointer, s.Pointer))
+
+	s.Pointer = pointer.Time(time.Time{}.Add(time.Minute))
+	fmt.Println(fmt.Sprintf("The value set by the library: %T %v", s.Pointer, *s.Pointer))
+
+	s.Pointer = &[]time.Time{time.Time{}.Add(time.Hour)}[0]
+	fmt.Println(fmt.Sprintf("The value set in elegant way: %T %v", s.Pointer, *s.Pointer))
+
+	// Output:
+	// Zero pointer value: *time.Time <nil>
+	// The value set by the library: *time.Time 0001-01-01 00:01:00 +0000 UTC
+	// The value set in elegant way: *time.Time 0001-01-01 01:00:00 +0000 UTC
 }
