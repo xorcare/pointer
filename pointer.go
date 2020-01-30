@@ -118,3 +118,7 @@ func Uintptr(v uintptr) *uintptr { return &v }
 // Time is a helper routine that allocates a new time.Time value
 // to store v and returns a pointer to it.
 func Time(v time.Time) *time.Time { return &v }
+
+// Duration is a helper routine that allocates a new time.Duration value
+// to store v and returns a pointer to it.
+func Duration(v time.Duration) *time.Duration { return &v }
