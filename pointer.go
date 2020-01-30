@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+// Package pointer contains helper routines for simplifying the creation
+// of optional fields of basic type.
 package pointer
 
 import (
