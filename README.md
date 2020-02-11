@@ -17,7 +17,7 @@ go get github.com/xorcare/pointer
 ## Examples
 
 Examples of using the library are presented on [godoc.org][GDE]
-and in the [source library code](https://git.io/Jeg75).
+and in the [source library code][SCE].
 
 ## FAQ
 
@@ -48,7 +48,8 @@ and in the [source library code](https://git.io/Jeg75).
 
 © Vasiliy Vasilyuk, 2019-2020
 
-Released under the [BSD 3-Clause License][LICENSE].
+Released under the [BSD 3-Clause License].
 
-[LICENSE]: https://git.io/Jeg7Q 'BSD 3-Clause "New" or "Revised" License'
+[BSD 3-Clause License]: https://github.com/xorcare/pointer/blob/master/LICENSE 'BSD 3-Clause "New" or "Revised" License'
 [GDE]: https://godoc.org/github.com/xorcare/pointer#pkg-examples 'Examples of using package pointer'
+[SCE]: https://github.com/xorcare/pointer/blob/master/example_test.go 'Source code examples of using package pointer'
