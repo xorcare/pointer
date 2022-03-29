@@ -1,7 +1,7 @@
 # pointer
 
-[![Build Status](https://travis-ci.org/xorcare/pointer.svg?branch=master)](https://travis-ci.org/xorcare/pointer)
-[![codecov](https://codecov.io/gh/xorcare/pointer/badge.svg)](https://codecov.io/gh/xorcare/pointer)
+[![Go workflow status badge](https://github.com/xorcare/pointer/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/xorcare/pointer/actions/workflows/go.yml)
+[![codecov](https://codecov.io/gh/xorcare/pointer/badge.svg?branch=main)](https://codecov.io/gh/xorcare/pointer)
 [![Go Report Card](https://goreportcard.com/badge/github.com/xorcare/pointer)](https://goreportcard.com/report/github.com/xorcare/pointer)
 [![GoDoc](https://godoc.org/github.com/xorcare/pointer?status.svg)](https://godoc.org/github.com/xorcare/pointer)
 

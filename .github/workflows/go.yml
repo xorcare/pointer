@@ -1,0 +1,54 @@
+name: Go
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+  - cron: '17 17 * * 5'
+  workflow_dispatch: { }
+
+jobs:
+  basic:
+    name: 'Basic health checks'
+    runs-on: "${{ matrix.os }}"
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        go:
+        - '1.11'
+        - '1.12'
+        - '1.13'
+        - '1.14'
+        - '1.15'
+        - '1.16'
+        - '1.17'
+        - '1.18'
+    steps:
+    - uses: actions/checkout@v3
+    - name: "Set up Go:${{ matrix.go }}"
+      uses: actions/setup-go@v3
+      with:
+        go-version: '${{ matrix.go }}'
+    - name: Make build
+      run: make build
+    - name: Make test
+      run: make test
+
+  advanced:
+    name: 'Full check code quality'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: "Set up Go"
+      uses: actions/setup-go@v3
+      with:
+        go-version: '1.18'
+    - name: Make check
+      run: make check
+    - uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: coverage.out
+        verbose: true
