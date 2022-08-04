@@ -14,6 +14,10 @@ of optional fields of basic type.
 go get github.com/xorcare/pointer
 ```
 
+## Generics
+
+Starting with Go 18+, you can use the `Of` method to get pointers to values of any types.
+
 ## Examples
 
 Examples of using the library are presented on [godoc.org][GDE]
