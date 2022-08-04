@@ -44,24 +44,10 @@ test: ## Run unit tests
 	@go test ./... -count=1 -coverprofile=$(COVER_FILE) -covermode=atomic $d
 	@go tool cover -func=$(COVER_FILE) | grep ^total
 
-CDTOOLS ?= @cd internal/tools &&
 .PHONY: tools
 tools: ## Install all needed tools, e.g. for static checks
-	$(CDTOOLS) \
-	go install \
-	golang.org/x/lint/golint \
-	golang.org/x/tools/cmd/goimports
-
-.PHONY: toolsup
-toolsup: ## Update all needed tools, e.g. for static checks
-	$(CDTOOLS) \
-	go mod tidy && \
-	go get \
-	golang.org/x/lint/golint@latest \
-	golang.org/x/tools/cmd/goimports@latest && \
-	go mod download && \
-	go mod verify
-	$(MAKE) tools
+	@go install golang.org/x/lint/golint@v0.0.0-20210508222113-6edffad5e616
+	@go install golang.org/x/tools/cmd/goimports@v0.0.0-20200130002326-2f3ba24bd6e7
 
 .PHONY: vet
 vet: ## Check the project with vet
