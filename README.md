@@ -50,7 +50,7 @@ and in the [source library code][SCE].
 
 ## License
 
-© Vasiliy Vasilyuk, 2019-2020
+© 2019-2020,2022 Vasiliy Vasilyuk <xorcare@gmail.com>
 
 Released under the [BSD 3-Clause License].
 
