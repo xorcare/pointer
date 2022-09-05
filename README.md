@@ -54,6 +54,6 @@ and in the [source library code][SCE].
 
 Released under the [BSD 3-Clause License].
 
-[BSD 3-Clause License]: https://github.com/xorcare/pointer/blob/master/LICENSE 'BSD 3-Clause "New" or "Revised" License'
+[BSD 3-Clause License]: https://github.com/xorcare/pointer/blob/main/LICENSE 'BSD 3-Clause "New" or "Revised" License'
 [GDE]: https://godoc.org/github.com/xorcare/pointer#pkg-examples 'Examples of using package pointer'
-[SCE]: https://github.com/xorcare/pointer/blob/master/example_test.go 'Source code examples of using package pointer'
+[SCE]: https://github.com/xorcare/pointer/blob/main/example_test.go 'Source code examples of using package pointer'
