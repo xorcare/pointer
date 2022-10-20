@@ -8,6 +8,25 @@
 Package pointer contains helper routines for simplifying the creation
 of optional fields of basic type.
 
+## A little copying is better than a little dependency
+
+With the advent of generics in go 1.18, using this library in your code is
+likely to be unwarranted, I recommend that you make a small local copy of this
+library, for example:
+
+Put the code below in the file: `internal/pointer/pointer.go` and use it at
+your own pleasure.
+
+```go
+package pointer
+
+// Of is a helper routine that allocates a new any value
+// to store v and returns a pointer to it.
+func Of[Value any](v Value) *Value {
+    return &v
+}
+```
+
 ## Installation
 
 ```bash
