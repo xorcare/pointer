@@ -25,7 +25,7 @@ jobs:
         - '1.18'
         - '1.19'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: "Set up Go:${{ matrix.go }}"
       uses: actions/setup-go@v3
       with:
@@ -39,7 +39,7 @@ jobs:
     name: 'Full check code quality'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: "Set up Go"
       uses: actions/setup-go@v3
       with:
