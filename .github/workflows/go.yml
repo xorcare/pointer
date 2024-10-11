@@ -1,56 +1,56 @@
+---
 name: Go
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-  workflow_dispatch: { }
-
+    branches: [main]
+  workflow_dispatch: {}
 jobs:
   basic:
-    name: 'Basic health checks'
-    runs-on: "${{ matrix.os }}"
+    name: Basic health checks
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ubuntu-latest]
         go:
-        - '1.11'
-        - '1.12'
-        - '1.13'
-        - '1.14'
-        - '1.15'
-        - '1.16'
-        - '1.17'
-        - '1.18'
-        - '1.19'
-        - '1.20'
-        - '1.21'
-        - '1.22'
+          - "1.11"
+          - "1.12"
+          - "1.13"
+          - "1.14"
+          - "1.15"
+          - "1.16"
+          - "1.17"
+          - "1.18"
+          - "1.19"
+          - "1.20"
+          - "1.21"
+          - "1.22"
     steps:
-    - uses: actions/checkout@v4
-    - name: "Set up Go:${{ matrix.go }}"
-      uses: actions/setup-go@v5
-      with:
-        go-version: '${{ matrix.go }}'
-    - name: Make build
-      run: make build
-    - name: Make test
-      run: make test
+      - uses: actions/checkout@v4
+      - name: Set up Go:${{ matrix.go }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+      - name: Make build
+        run: make build
+      - name: Make test
+        run: make test
 
   advanced:
-    name: 'Full check code quality'
+    name: Full check code quality
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: "Set up Go"
-      uses: actions/setup-go@v5
-      with:
-        go-version: '1.21'
-    - name: Make check
-      run: make check
-    - uses: codecov/codecov-action@v4
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        files: coverage.out
-        verbose: true
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.21"
+      - name: Make check
+        run: make check
+      - uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage.out
+          verbose: true
