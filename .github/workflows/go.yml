@@ -49,7 +49,7 @@ jobs:
           go-version: "1.21"
       - name: Make check
         run: make check
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.out
