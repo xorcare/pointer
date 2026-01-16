@@ -8,6 +8,14 @@
 Package pointer contains helper routines for simplifying the creation
 of optional fields of basic type.
 
+## Deprecated in Go 1.26+
+
+Starting with **Go 1.26**, the built-in `new` function supports expressions:
+`p := new(42)` or `&Age: new(calculateAge())`.
+
+This replaces all helpers like `pointer.Of[Value](v)` or type-specific `pointer.Int(1)`.
+**No need to use this package anymore — copy the generics version locally only if stuck on Go 1.18–1.25.**
+
 ## A little copying is better than a little dependency
 
 With the advent of generics in go 1.18, using this library in your code is
